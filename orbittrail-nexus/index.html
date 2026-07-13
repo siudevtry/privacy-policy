@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Privacy Policy for the Orbittrail Nexus browser extension."
+  >
+
+  <title>Privacy Policy — Orbittrail Nexus</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #080b12;
+      --surface: rgba(18, 24, 38, 0.82);
+      --surface-light: rgba(28, 36, 54, 0.72);
+      --border: rgba(148, 163, 184, 0.17);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --accent: #8b5cf6;
+      --accent-light: #22d3ee;
+      --success: #34d399;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px 18px;
+      overflow-x: hidden;
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(139, 92, 246, 0.2),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(34, 211, 238, 0.14),
+          transparent 26%
+        ),
+        radial-gradient(
+          circle at 50% 90%,
+          rgba(52, 211, 153, 0.08),
+          transparent 30%
+        ),
+        var(--background);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
+    }
+
+    .page {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      padding: 54px 42px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(22, 28, 45, 0.96),
+          rgba(10, 14, 24, 0.9)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -120px;
+      right: -100px;
+
+      width: 320px;
+      height: 320px;
+
+      content: "";
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.32),
+          transparent 66%
+        );
+
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 24px;
+      padding: 8px 13px;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #d8d1ff;
+      text-transform: uppercase;
+
+      background: rgba(139, 92, 246, 0.11);
+      border: 1px solid rgba(139, 92, 246, 0.28);
+      border-radius: 999px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(52, 211, 153, 0.9);
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+
+      max-width: 700px;
+      margin: 0;
+
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background:
+        linear-gradient(
+          90deg,
+          #c4b5fd,
+          #67e8f9,
+          #6ee7b7
+        );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .intro {
+      position: relative;
+      z-index: 1;
+
+      max-width: 700px;
+      margin: 24px 0 0;
+
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .updated {
+      position: relative;
+      z-index: 1;
+
+      margin-top: 28px;
+      font-size: 14px;
+      color: #7f8ca3;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+
+      margin: 22px 0;
+    }
+
+    .summary-card {
+      padding: 22px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      backdrop-filter: blur(18px);
+    }
+
+    .summary-icon {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+
+      margin-bottom: 14px;
+      font-size: 18px;
+
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    .summary-card span {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .policy {
+      padding: 14px 40px 40px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: -0.025em;
+    }
+
+    .number {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      flex: 0 0 auto;
+      place-items: center;
+
+      font-size: 13px;
+      color: #ddd6fe;
+
+      background: rgba(139, 92, 246, 0.13);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: 10px;
+    }
+
+    p,
+    li {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: 13px;
+    }
+
+    ul {
+      display: grid;
+      gap: 11px;
+      margin: 17px 0 0;
+      padding-left: 22px;
+    }
+
+    li::marker {
+      color: var(--accent-light);
+    }
+
+    code {
+      padding: 3px 7px;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 0.9em;
+      color: #c4b5fd;
+
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.16);
+      border-radius: 7px;
+    }
+
+    .permission-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 20px;
+    }
+
+    .permission {
+      padding: 18px 20px;
+
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .permission strong {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: #f1f5f9;
+    }
+
+    .permission p {
+      font-size: 15px;
+    }
+
+    .notice {
+      margin-top: 20px;
+      padding: 18px 20px;
+
+      color: #cbd5e1;
+      background: rgba(34, 211, 238, 0.055);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      border-radius: 15px;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-top: 18px;
+      padding: 12px 17px;
+
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(139, 92, 246, 0.85),
+          rgba(79, 70, 229, 0.85)
+        );
+
+      border: 1px solid rgba(196, 181, 253, 0.25);
+      border-radius: 12px;
+
+      transition:
+        transform 160ms ease,
+        filter 160ms ease;
+    }
+
+    .contact:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 30px 10px 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #657188;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 18px 12px;
+      }
+
+      .hero {
+        padding: 40px 24px;
+        border-radius: 20px;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .policy {
+        padding: 8px 23px 26px;
+        border-radius: 20px;
+      }
+
+      section {
+        padding: 29px 0;
+      }
+
+      h2 {
+        align-items: flex-start;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Privacy-first extension
+      </div>
+
+      <h1>
+        Privacy Policy for
+        <span class="gradient-text">Orbittrail Nexus</span>
+      </h1>
+
+      <p class="intro">
+        This Privacy Policy explains how the Orbittrail Nexus browser
+        extension handles information when you install and use it.
+      </p>
+
+      <p class="updated">
+        Last updated: July 13, 2026
+      </p>
+    </header>
+
+    <div class="summary" aria-label="Privacy summary">
+      <article class="summary-card">
+        <div class="summary-icon">◎</div>
+        <strong>No personal data collection</strong>
+        <span>
+          The extension does not collect names, email addresses,
+          browsing history, or personal identifiers.
+        </span>
+      </article>
+
+      <article class="summary-card">
+        <div class="summary-icon">⌁</div>
+        <strong>Local settings only</strong>
+        <span>
+          Preferences are stored locally in the user's browser
+          through the Chrome storage API.
+        </span>
+      </article>
+
+      <article class="summary-card">
+        <div class="summary-icon">✓</div>
+        <strong>No advertising or tracking</strong>
+        <span>
+          The extension does not display ads, track users,
+          or use analytics services.
+        </span>
+      </article>
+    </div>
+
+    <article class="policy">
+      <section>
+        <h2>
+          <span class="number">1</span>
+          Overview
+        </h2>
+
+        <p>
+          Orbittrail Nexus is a visual browser extension that creates
+          glowing orbs around the cursor, with trails that gradually
+          fade over time.
+        </p>
+
+        <p>
+          The effect is activated by the user and can be customized
+          through the extension's toolbar popup.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">2</span>
+          Information we collect
+        </h2>
+
+        <p>
+          Orbittrail Nexus does not collect, record, transmit, sell,
+          or share personal information.
+        </p>
+
+        <ul>
+          <li>No names or email addresses are collected.</li>
+          <li>No browsing history is collected.</li>
+          <li>No website content is stored or transmitted.</li>
+          <li>No search queries or form entries are collected.</li>
+          <li>No location information is collected.</li>
+          <li>No authentication or financial information is collected.</li>
+          <li>No analytics or behavioral tracking is used.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">3</span>
+          Local storage
+        </h2>
+
+        <p>
+          The extension uses the browser's local storage functionality
+          only to remember user-selected preferences, such as whether
+          the effect is enabled and how the visual effect is configured.
+        </p>
+
+        <p>
+          These preferences remain inside the user's browser and are not
+          sent to the developer or to an external server.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">4</span>
+          Permissions
+        </h2>
+
+        <p>
+          Orbittrail Nexus requests only the permissions needed to
+          provide its declared visual effect.
+        </p>
+
+        <div class="permission-list">
+          <div class="permission">
+            <strong><code>activeTab</code></strong>
+
+            <p>
+              Used only after the user invokes the extension, allowing
+              the effect to run on the currently active browser tab.
+            </p>
+          </div>
+
+          <div class="permission">
+            <strong><code>scripting</code></strong>
+
+            <p>
+              Used to insert and run the extension's visual-effect code
+              on the active tab after the user initiates the action.
+            </p>
+          </div>
+
+          <div class="permission">
+            <strong><code>storage</code></strong>
+
+            <p>
+              Used to save extension preferences locally in the user's
+              browser so the selected settings can be restored later.
+            </p>
+          </div>
+        </div>
+
+        <div class="notice">
+          These permissions are not used to monitor browsing activity,
+          collect page content, or build a user profile.
+        </div>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">5</span>
+          Remote code and external services
+        </h2>
+
+        <p>
+          Orbittrail Nexus does not download or execute remote code.
+          All executable extension code is included within the extension
+          package distributed through the browser extension store.
+        </p>
+
+        <p>
+          The extension does not use external analytics platforms,
+          advertising networks, tracking pixels, or third-party data
+          collection services.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">6</span>
+          Data sharing and selling
+        </h2>
+
+        <p>
+          Because Orbittrail Nexus does not collect personal data,
+          there is no personal data to sell, rent, disclose, or share
+          with third parties.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">7</span>
+          Data security
+        </h2>
+
+        <p>
+          User preferences are handled through the browser's extension
+          storage system. The extension is designed to keep its operation
+          limited to the functionality described in this policy.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">8</span>
+          Children's privacy
+        </h2>
+
+        <p>
+          Orbittrail Nexus does not knowingly collect personal information
+          from children or from any other users.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">9</span>
+          Changes to this policy
+        </h2>
+
+        <p>
+          This Privacy Policy may be updated if the extension's
+          functionality or data-handling practices change.
+          The latest version will always be published on this page,
+          together with its revision date.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="number">10</span>
+          Contact
+        </h2>
+
+        <p>
+          For questions about this Privacy Policy or the extension's
+          privacy practices, contact the developer through the project's
+          GitHub issue page.
+        </p>
+
+        <a
+          class="contact"
+          href="https://github.com/quechan814082-prog/privacy_policy/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open a privacy inquiry
+          <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </article>
+
+    <footer>
+      Orbittrail Nexus · Privacy Policy
+    </footer>
+  </main>
+</body>
+</html>
