@@ -1,49 +1,317 @@
-<section class="list" aria-label="Available privacy policies">
-  <a class="policy-link" href="./orbittrail-nexus/">
-    <span class="policy-info">
-      <span class="policy-name">Orbittrail Nexus</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-      <span class="policy-description">
-        View the privacy policy for Orbittrail Nexus.
-      </span>
-    </span>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <span class="arrow" aria-hidden="true">→</span>
-  </a>
+  <meta
+    name="description"
+    content="Privacy policies for browser extensions."
+  >
 
-  <a class="policy-link" href="./glyph-stretch-loop/">
-    <span class="policy-info">
-      <span class="policy-name">Glyph Stretch Loop</span>
+  <title>Privacy Policies</title>
 
-      <span class="policy-description">
-        View the privacy policy for Glyph Stretch Loop.
-      </span>
-    </span>
+  <style>
+    :root {
+      --background: #f5f6f8;
+      --surface: #ffffff;
+      --text: #17191d;
+      --muted: #68707c;
+      --border: #e3e6ea;
+      --hover: #f8f9fa;
+      --shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
+    }
 
-    <span class="arrow" aria-hidden="true">→</span>
-  </a>
+    * {
+      box-sizing: border-box;
+    }
 
-  <a class="policy-link" href="./scanwave-beacon/">
-    <span class="policy-info">
-      <span class="policy-name">Scanwave Beacon</span>
+    html {
+      scroll-behavior: smooth;
+    }
 
-      <span class="policy-description">
-        View the privacy policy for Scanwave Beacon.
-      </span>
-    </span>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 40px 20px;
 
-    <span class="arrow" aria-hidden="true">→</span>
-  </a>
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  <a class="policy-link" href="./chromawash/">
-    <span class="policy-info">
-      <span class="policy-name">Chromawash</span>
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-      <span class="policy-description">
-        View the privacy policy for Chromawash.
-      </span>
-    </span>
+      color: var(--text);
+      background: var(--background);
+    }
 
-    <span class="arrow" aria-hidden="true">→</span>
-  </a>
-</section>
+    main {
+      width: min(720px, 100%);
+      padding: 48px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      color: #4f5661;
+      background: #f0f2f4;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size: clamp(34px, 6vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .description {
+      max-width: 520px;
+      margin: 16px auto 0;
+
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .policy-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .policy-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding: 20px 22px;
+
+      color: var(--text);
+      text-decoration: none;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+    }
+
+    .policy-link:hover {
+      background: var(--hover);
+      border-color: #cdd2d9;
+      box-shadow: 0 10px 28px rgba(16, 24, 40, 0.07);
+      transform: translateY(-2px);
+    }
+
+    .policy-link:focus-visible {
+      outline: 3px solid rgba(23, 25, 29, 0.18);
+      outline-offset: 3px;
+    }
+
+    .policy-info {
+      min-width: 0;
+    }
+
+    .policy-name {
+      display: block;
+      margin-bottom: 6px;
+
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .policy-description {
+      display: block;
+
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .arrow {
+      flex: 0 0 auto;
+
+      font-size: 22px;
+      color: #858c96;
+
+      transition: transform 160ms ease;
+    }
+
+    .policy-link:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    footer {
+      margin-top: 30px;
+
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: center;
+      color: #9299a3;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        align-items: flex-start;
+        padding: 18px 14px;
+      }
+
+      main {
+        padding: 32px 20px;
+        border-radius: 18px;
+      }
+
+      .header {
+        margin-bottom: 26px;
+      }
+
+      .policy-link {
+        padding: 18px;
+      }
+
+      .policy-name {
+        font-size: 17px;
+      }
+
+      .policy-description {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header class="header">
+      <span class="label">Privacy Center</span>
+
+      <h1>Privacy Policies</h1>
+
+      <p class="description">
+        Select a product below to review its privacy policy
+        and data-handling practices.
+      </p>
+    </header>
+
+    <section
+      class="policy-list"
+      aria-label="Available privacy policies"
+    >
+      <a
+        class="policy-link"
+        href="./orbittrail-nexus/"
+      >
+        <span class="policy-info">
+          <span class="policy-name">
+            Orbittrail Nexus
+          </span>
+
+          <span class="policy-description">
+            View the privacy policy for Orbittrail Nexus.
+          </span>
+        </span>
+
+        <span class="arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+
+      <a
+        class="policy-link"
+        href="./glyph-stretch-loop/"
+      >
+        <span class="policy-info">
+          <span class="policy-name">
+            Glyph Stretch Loop
+          </span>
+
+          <span class="policy-description">
+            View the privacy policy for Glyph Stretch Loop.
+          </span>
+        </span>
+
+        <span class="arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+
+      <a
+        class="policy-link"
+        href="./scanwave-beacon/"
+      >
+        <span class="policy-info">
+          <span class="policy-name">
+            Scanwave Beacon
+          </span>
+
+          <span class="policy-description">
+            View the privacy policy for Scanwave Beacon.
+          </span>
+        </span>
+
+        <span class="arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+
+      <a
+        class="policy-link"
+        href="./chromawash/"
+      >
+        <span class="policy-info">
+          <span class="policy-name">
+            Chromawash
+          </span>
+
+          <span class="policy-description">
+            View the privacy policy for Chromawash.
+          </span>
+        </span>
+
+        <span class="arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+    </section>
+
+    <footer>
+      Clear, transparent, and product-specific privacy information.
+    </footer>
+  </main>
+</body>
+</html>
