@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Privacy policies for browser extensions."
+  >
+
   <title>Privacy Policies</title>
 
   <style>
+    :root {
+      --background: #f6f7f9;
+      --surface: #ffffff;
+      --text: #16181d;
+      --muted: #68707d;
+      --border: #e4e7ec;
+      --hover: #f8f9fb;
+      --shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -13,67 +29,211 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      font-family: Arial, sans-serif;
-      color: #f8fafc;
-      background: #080b12;
+      padding: 32px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+      background: var(--background);
     }
 
     main {
-      width: min(650px, 100%);
-      padding: 40px;
-      background: #111827;
-      border: 1px solid #273244;
-      border-radius: 20px;
+      width: min(680px, 100%);
+      padding: 48px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      color: #4d5561;
+      background: #f1f3f5;
+      border-radius: 999px;
     }
 
     h1 {
-      margin-top: 0;
+      margin: 0;
+      font-size: clamp(32px, 6vw, 46px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
     }
 
-    p {
-      color: #aeb8c8;
+    .description {
+      max-width: 500px;
+      margin: 16px auto 0;
+
+      font-size: 16px;
       line-height: 1.7;
+      color: var(--muted);
     }
 
-    a {
-      display: block;
-      margin-top: 20px;
-      padding: 18px;
-      color: #ffffff;
+    .list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .policy-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding: 20px 22px;
+
+      color: var(--text);
       text-decoration: none;
-      background: #1c2535;
-      border: 1px solid #344158;
-      border-radius: 12px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease;
     }
 
-    a:hover {
-      background: #263349;
+    .policy-link:hover {
+      background: var(--hover);
+      border-color: #cfd4dc;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(16, 24, 40, 0.07);
     }
 
-    span {
+    .policy-info {
+      min-width: 0;
+    }
+
+    .policy-name {
       display: block;
-      margin-top: 6px;
+      margin-bottom: 6px;
+
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .policy-description {
+      display: block;
+
       font-size: 14px;
-      color: #aeb8c8;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .arrow {
+      flex: 0 0 auto;
+      font-size: 22px;
+      color: #858c97;
+
+      transition: transform 160ms ease;
+    }
+
+    .policy-link:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+
+      font-size: 13px;
+      color: #9299a3;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+
+      main {
+        padding: 32px 22px;
+        border-radius: 18px;
+      }
+
+      .header {
+        margin-bottom: 26px;
+      }
+
+      .policy-link {
+        padding: 18px;
+      }
+
+      .policy-name {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 
 <body>
   <main>
-    <h1>Privacy Policies</h1>
+    <header class="header">
+      <span class="label">Privacy Center</span>
 
-    <p>
-      Select a product below to view its privacy policy.
-    </p>
+      <h1>Privacy Policies</h1>
 
-    <a href="./orbittrail-nexus/">
-      <strong>Orbittrail Nexus</strong>
-      <span>View Privacy Policy</span>
-    </a>
+      <p class="description">
+        Select a product below to review its privacy policy
+        and data-handling practices.
+      </p>
+    </header>
+
+    <section class="list" aria-label="Available privacy policies">
+      <a class="policy-link" href="./orbittrail-nexus/">
+        <span class="policy-info">
+          <span class="policy-name">Orbittrail Nexus</span>
+
+          <span class="policy-description">
+            View the privacy policy for Orbittrail Nexus.
+          </span>
+        </span>
+
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="policy-link" href="./glyph-stretch-loop/">
+        <span class="policy-info">
+          <span class="policy-name">Glyph Stretch Loop</span>
+
+          <span class="policy-description">
+            View the privacy policy for Glyph Stretch Loop.
+          </span>
+        </span>
+
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <footer>
+      Clear, transparent and product-specific privacy information.
+    </footer>
   </main>
 </body>
 </html>
