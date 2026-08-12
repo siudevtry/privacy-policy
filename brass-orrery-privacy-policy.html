@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Privacy Policy for Brass Orrery, a Chrome extension that replaces the default new tab page with an animated brass orbital visual environment." name="description"/>
+<meta content="#f4f1ea" name="theme-color"/>
+<title>Privacy Policy — Brass Orrery</title>
+<style>
+    :root {
+      --bg: #f4f1ea;
+      --paper: #fffdf9;
+      --paper-soft: #f8f5ef;
+      --text: #26231f;
+      --muted: #6e675d;
+      --line: #ded7cb;
+      --line-strong: #cfc4b3;
+      --accent: #8b6a35;
+      --accent-dark: #65491f;
+      --accent-soft: #eee4d3;
+      --success-bg: #f2f5ef;
+      --success-line: #cfd8c7;
+      --success-text: #3f5137;
+      --shadow: 0 20px 60px rgba(69, 55, 33, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --max: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(139, 106, 53, 0.08), transparent 34%),
+        linear-gradient(180deg, #f7f4ee 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .site-shell {
+      width: min(calc(100% - 32px), 1180px);
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding: 0 6px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      position: relative;
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      box-shadow: inset 0 0 0 6px var(--accent-soft);
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      transform: rotate(28deg) scaleY(0.62);
+    }
+
+    .brand-mark::after {
+      transform: rotate(-28deg) scaleY(0.62);
+    }
+
+    .policy-card {
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 54px 58px 44px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(139, 106, 53, 0.08), transparent 44%),
+        var(--paper);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 14px;
+      max-width: 780px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 6vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 600;
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      padding: 34px 26px 36px;
+      border-right: 1px solid var(--line);
+    }
+
+    .sidebar-title {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 9px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: background 150ms ease, color 150ms ease;
+    }
+
+    .toc a:hover {
+      background: var(--paper-soft);
+      color: var(--text);
+    }
+
+    .content {
+      padding: 40px 52px 54px;
+      min-width: 0;
+    }
+
+    .summary {
+      margin-bottom: 36px;
+      padding: 21px 22px;
+      border: 1px solid var(--success-line);
+      border-radius: var(--radius-md);
+      background: var(--success-bg);
+      color: var(--success-text);
+    }
+
+    .summary strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #35462f;
+      font-size: 0.92rem;
+    }
+
+    section {
+      scroll-margin-top: 24px;
+      padding: 0 0 32px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-bottom: 13px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      font-weight: 600;
+    }
+
+    h3 {
+      margin: 24px 0 9px;
+      font-size: 0.97rem;
+      line-height: 1.4;
+    }
+
+    p,
+    li {
+      color: #4f4a43;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 14px 0 0;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .data-item {
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper-soft);
+    }
+
+    .data-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .data-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .permission-box {
+      margin-top: 18px;
+      padding: 19px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      background: var(--paper-soft);
+    }
+
+    .permission-name {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-card {
+      margin-top: 18px;
+      padding: 22px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fffdfa, #faf6ef);
+    }
+
+    .contact-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 58px 26px;
+      border-top: 1px solid var(--line);
+      background: #fbf8f2;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer a {
+      color: inherit;
+    }
+
+    @media (max-width: 820px) {
+      .site-shell {
+        width: min(calc(100% - 20px), 760px);
+        padding-top: 12px;
+      }
+
+      .topbar {
+        padding: 0 4px;
+      }
+
+      .policy-card {
+        border-radius: 16px;
+      }
+
+      .hero {
+        padding: 38px 28px 32px;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .sidebar {
+        position: static;
+        padding: 20px 24px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .toc {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .content {
+        padding: 32px 28px 40px;
+      }
+
+      .footer {
+        padding: 20px 28px 24px;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 32px 22px 28px;
+      }
+
+      .content {
+        padding: 28px 22px 36px;
+      }
+
+      .sidebar {
+        padding: 18px 18px 20px;
+      }
+
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        padding: 18px 22px 22px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .site-shell {
+        width: 100%;
+        padding: 0;
+      }
+
+      .topbar,
+      .sidebar {
+        display: none;
+      }
+
+      .policy-card {
+        border: 0;
+        box-shadow: none;
+      }
+
+      .hero,
+      .content,
+      .footer {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .layout {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="site-shell">
+<div aria-label="Page header" class="topbar">
+<div class="brand">
+<span aria-hidden="true" class="brand-mark"></span>
+<span>Brass Orrery</span>
+</div>
+<span>Chrome Extension Privacy Policy</span>
+</div>
+<main class="policy-card">
+<header class="hero">
+<div class="eyebrow">Privacy Policy</div>
+<h1>Privacy, kept deliberately simple.</h1>
+<p class="hero-copy">
+          Brass Orrery replaces the default new tab page with a slow-moving visual environment built around brass orbital rings. The extension is designed around a narrow purpose and does not need personal browsing data to provide that experience.
+        </p>
+<div aria-label="Policy metadata" class="meta-row">
+<span class="meta-chip">Effective: August 12, 2026</span>
+<span class="meta-chip">Applies to: Brass Orrery</span>
+<span class="meta-chip">Platform: Google Chrome</span>
+</div>
+</header>
+<div class="layout">
+<aside aria-label="Privacy policy navigation" class="sidebar">
+<div class="sidebar-title">On this page</div>
+<nav class="toc">
+<a href="#overview">Overview</a>
+<a href="#purpose">Extension purpose</a>
+<a href="#collection">Data collection</a>
+<a href="#storage">Local storage</a>
+<a href="#permissions">Permissions</a>
+<a href="#sharing">Sharing &amp; advertising</a>
+<a href="#security">Security</a>
+<a href="#children">Children's privacy</a>
+<a href="#changes">Policy changes</a>
+<a href="#contact">Contact</a>
+</nav>
+</aside>
+<article class="content">
+<div class="summary">
+<strong>Plain-language summary</strong>
+  Brass Orrery is a focused new tab visual extension. It uses Chrome storage to remember the visual and motion preferences you choose so the experience remains consistent between sessions. The extension is not designed to collect personal information, inspect the contents of websites you visit, build a browsing profile, or use your activity for advertising or tracking.
+</div>
+<section id="overview">
+<h2>1. Overview</h2>
+<p>
+    This Privacy Policy explains how Brass Orrery handles information when you install, open, and use the extension. Brass Orrery replaces Chrome's default new tab page with an animated abstract environment centered on slow-moving brass orbital rings, balanced spacing, and gradual rotational motion. Its functionality is intentionally narrow: it provides a visual new tab experience and remembers the display preferences required to keep that experience consistent.
+  </p>
+<p>
+    The extension is designed around data minimization. Its core visual features do not require your name, email address, account credentials, browsing history, search history, page contents, or other personal information. Brass Orrery does not require you to create an account or submit personal details before using the extension.
+  </p>
+<p>
+    This policy applies to the Brass Orrery Chrome extension itself. It describes the extension's intended use of browser storage, the categories of information it is not designed to collect, and the privacy principles applied to its current feature set.
+  </p>
+</section>
+<section id="purpose">
+<h2>2. Extension purpose</h2>
+<p>
+    Brass Orrery has one specific purpose: to replace the standard new tab page with a calm animated visual scene. Each time a new tab is opened, the extension renders its own abstract environment and applies the user's saved visual preferences, including motion behavior and related display settings when those options are available.
+  </p>
+<p>
+    The extension is not intended to act as a browsing monitor, content analyzer, search assistant, advertising platform, or user-profiling service. Its visual function does not depend on reading the websites you visit or building a history of what you do elsewhere in Chrome. The extension's settings exist to control the appearance and behavior of Brass Orrery itself.
+  </p>
+<p>
+    Keeping this purpose narrow also limits the data the extension needs. Brass Orrery should request and use only the browser capabilities that are reasonably necessary to display the new tab experience and preserve the settings selected by the user.
+  </p>
+</section>
+<section id="collection">
+<h2>3. Information we collect</h2>
+<p>
+    Brass Orrery is not designed to collect personal information or personal browsing activity. The extension does not need information about your identity or the contents of unrelated websites in order to render its new tab visual. In normal use, the information handled by the extension is limited to the configuration needed for its own appearance and behavior.
+  </p>
+<div aria-label="Data not collected" class="data-grid">
+<div class="data-item">
+<strong>Browsing activity</strong>
+<span>Visited URLs, browsing history, search queries, page text, page content, or activity on unrelated websites.</span>
+</div>
+<div class="data-item">
+<strong>Personal identity</strong>
+<span>Name, postal address, phone number, login credentials, government identifiers, or similar identity information.</span>
+</div>
+<div class="data-item">
+<strong>Private communications</strong>
+<span>Email contents, private messages, form entries, typed communications, or the contents of personal documents.</span>
+</div>
+<div class="data-item">
+<strong>Advertising profiles</strong>
+<span>Cross-site tracking identifiers, behavioral advertising profiles, or marketing segments based on browsing behavior.</span>
+</div>
+</div>
+<p style="margin-top: 18px;">
+    Brass Orrery also does not ask users to register an account in order to access the new tab experience. Any settings retained by the extension are used to configure Brass Orrery itself and are not intended to reveal what websites you visit, what you search for, or what you do outside the extension's own interface.
+  </p>
+<p>
+    If the extension's functionality changes in the future in a way that requires a new category of information, the privacy disclosures should be updated to reflect that change before or when the new functionality is released.
+  </p>
+</section>
+<section id="storage">
+<h2>4. Local storage and saved preferences</h2>
+<p>
+    Brass Orrery uses Chrome's storage capability to remember the visual preferences you select. This allows the extension to reopen with a consistent appearance instead of resetting its configuration every time the browser is closed or a new tab is created. Depending on the options exposed by the extension, stored values may relate to motion behavior, animation preferences, or other display settings associated with the Brass Orrery scene.
+  </p>
+<p>
+    These saved values are functional settings, not a record of your browsing activity. They are used to determine how Brass Orrery should look or behave and are not intended to store visited websites, search terms, page content, login details, or a chronological history of your activity in Chrome.
+  </p>
+<p>
+    Chrome manages extension storage through its own browser environment. Saved preferences may remain available until they are changed, cleared through browser or extension controls, or removed as part of uninstalling or resetting the extension. Brass Orrery uses this storage for continuity of the visual experience rather than for tracking, advertising, or profiling.
+  </p>
+</section>
+<section id="permissions">
+<h2>5. Chrome permissions</h2>
+<p>
+    Chrome extensions can request permissions that provide access to specific browser capabilities. Brass Orrery is intended to use a limited permission set that corresponds to its stated new tab functionality. Permissions are not intended to be used for unrelated monitoring or data collection.
+  </p>
+<div class="permission-box">
+<span class="permission-name">storage</span>
+<p>
+      The <strong>storage</strong> permission is used to save and retrieve Brass Orrery's own visual preferences and related display configuration. Its purpose is persistence: when you return to a new tab later, the extension can apply the settings you previously selected instead of starting from default values each time.
+    </p>
+<p style="margin-bottom: 0;">
+      This permission is not intended to read your browsing history, inspect unrelated web pages, collect account credentials, create advertising profiles, or track your activity across websites. Stored configuration is used only in connection with the operation and presentation of Brass Orrery.
+    </p>
+</div>
+<p style="margin-top: 18px;">
+    If a future release requires additional Chrome permissions, those permissions should be evaluated against the extension's single-purpose function and disclosed when they materially affect how user information is accessed or handled.
+  </p>
+</section>
+<section id="sharing">
+<h2>6. Data sharing, sale, and advertising</h2>
+<p>
+    Brass Orrery is not designed around the collection or commercialization of personal information. The extension does not use its saved visual settings to create marketing profiles, determine advertising interests, or follow users across unrelated websites. Its current purpose can be provided without selling personal information or turning browsing activity into an advertising product.
+  </p>
+<p>
+    The extension is also not intended to disclose personal browsing activity to advertisers, data brokers, or other third parties for behavioral advertising. The browser storage used for Brass Orrery's own settings exists to support the extension's visual continuity, not to provide a source of user profiling data.
+  </p>
+<p>
+    If the extension ever introduces a third-party service, remote processing, analytics feature, or other integration that materially changes these practices, the Privacy Policy should be revised so users can understand what information is involved, why it is needed, and how it is handled.
+  </p>
+</section>
+<section id="security">
+<h2>7. Security and data minimization</h2>
+<p>
+    Brass Orrery follows a privacy-by-minimization approach: the safest data for a narrowly focused visual extension is data it does not need to collect. For that reason, the extension's current functionality is structured around browser-managed settings rather than personal profiles, accounts, or detailed records of browsing behavior.
+  </p>
+<p>
+    No software can eliminate every security risk, but limiting the amount and sensitivity of information handled by an extension reduces unnecessary exposure. Brass Orrery does not need users to provide passwords, financial information, private communications, or other sensitive personal data in order to display its new tab scene.
+  </p>
+<p>
+    Users should keep Google Chrome and Brass Orrery updated through normal Chrome Web Store distribution so that compatibility, maintenance, and security improvements can be applied as new versions are released.
+  </p>
+</section>
+<section id="children">
+<h2>8. Children's privacy</h2>
+<p>
+    Brass Orrery is a general-purpose browser customization tool and is not designed as a service for collecting information from children. The extension's core functionality is the same visual new tab experience for users generally and does not require a child, or any other user, to create a profile or submit personal details.
+  </p>
+<p>
+    Because Brass Orrery is not intended to collect personal information as part of its normal operation, it is likewise not intended to knowingly collect personal information from children through its visual or settings features. If the extension's feature set changes in a way that affects this position, the privacy disclosures should be updated accordingly.
+  </p>
+</section>
+<section id="changes">
+<h2>9. Changes to this Privacy Policy</h2>
+<p>
+    This Privacy Policy may be revised when Brass Orrery's functionality, permissions, technical architecture, or data-handling practices materially change. Minor wording or formatting updates may also be made to improve clarity, but any substantive change should continue to describe the extension's actual behavior accurately.
+  </p>
+<p>
+    When the policy is updated, the effective date shown near the top of this page should be changed so users can identify when the current version became applicable. If a future feature introduces a meaningful new type of data handling, the relevant section of this policy should be updated before or alongside that feature's release.
+  </p>
+<p>
+    Continued use of Brass Orrery after an updated policy is published will be subject to the version of the policy that corresponds to the extension's then-current practices, subject to any additional notice or consent that may be required by applicable rules.
+  </p>
+</section>
+<section id="contact">
+<h2>10. Contact</h2>
+<p>
+    If you have a question about this Privacy Policy, the use of Chrome storage, the permissions requested by Brass Orrery, or the extension's handling of information, you may contact the publisher using the support address below. Privacy-related questions should include enough detail to identify the issue without sending passwords, authentication codes, or other sensitive information.
+  </p>
+<p>
+    The contact channel may also be used to report a concern if you believe the extension is behaving in a way that is inconsistent with the practices described on this page. Reports can be reviewed more effectively when they include the Brass Orrery version, Chrome version, and a concise description of the behavior observed.
+  </p>
+<div class="contact-card">
+<p><strong>Extension:</strong> Brass Orrery</p>
+<p><strong>Platform:</strong> Google Chrome</p>
+<p><strong>Contact email:</strong> <a href="mailto:tieukhai284981@gmail.com">tieukhai284981@gmail.com</a></p>
+</div>
+</section>
+</article>
+</div>
+<footer class="footer">
+<span>© 2026 Brass Orrery. Privacy Policy.</span>
+<a href="#overview">Back to top</a>
+</footer>
+</main>
+</div>
+</body>
+</html>
