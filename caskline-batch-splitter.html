@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for Caskline Batch Splitter, a Chrome extension for calculating balanced batch plans, comparing split strategies, and exporting schedules as CSV files." />
+  <meta name="theme-color" content="#f4efe5" />
+  <title>Privacy Policy — Caskline Batch Splitter</title>
+  <style>
+    :root {
+      --bg: #f3efe7;
+      --paper: #fffdf8;
+      --paper-2: #faf6ee;
+      --ink: #2b2925;
+      --muted: #6f6a61;
+      --line: #ddd5c7;
+      --line-strong: #cfc3b2;
+      --accent: #8a5c16;
+      --accent-dark: #65400a;
+      --accent-soft: #f3e5ca;
+      --note-bg: #f7f2e9;
+      --note-border: #d8c6a6;
+      --shadow: 0 22px 70px rgba(73, 53, 24, .08);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --content: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(138, 92, 22, .07), transparent 28rem),
+        linear-gradient(180deg, #f7f3eb 0%, var(--bg) 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), 1180px);
+      margin: 0 auto;
+      padding: 28px 0 60px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 0 4px 18px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 750;
+      letter-spacing: -.01em;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--line-strong);
+      border-radius: 9px;
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(138,92,22,.22) 48% 52%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(138,92,22,.22) 48% 52%, transparent 52%),
+        var(--paper);
+      box-shadow: inset 0 0 0 5px var(--accent-soft);
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      padding: 54px 58px 46px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(138,92,22,.075), transparent 42%),
+        var(--paper);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 48px;
+      top: 34px;
+      width: 108px;
+      height: 108px;
+      opacity: .36;
+      background:
+        linear-gradient(var(--line-strong), var(--line-strong)) 0 33%/100% 1px no-repeat,
+        linear-gradient(var(--line-strong), var(--line-strong)) 0 66%/100% 1px no-repeat,
+        linear-gradient(90deg, var(--line-strong), var(--line-strong)) 33% 0/1px 100% no-repeat,
+        linear-gradient(90deg, var(--line-strong), var(--line-strong)) 66% 0/1px 100% no-repeat;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 16px;
+      color: var(--accent-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 6vw, 4.55rem);
+      line-height: .99;
+      letter-spacing: -.044em;
+      font-weight: 600;
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      margin-bottom: 27px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.6);
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 238px minmax(0,1fr);
+      align-items: start;
+    }
+
+    aside {
+      position: sticky;
+      top: 18px;
+      padding: 34px 27px 38px;
+      border-right: 1px solid var(--line);
+    }
+
+    .aside-label {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: .71rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: grid;
+      gap: 4px;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 9px;
+      color: var(--muted);
+      font-size: .87rem;
+      text-decoration: none;
+      transition: background 150ms ease, color 150ms ease;
+    }
+
+    nav a:hover {
+      background: var(--paper-2);
+      color: var(--ink);
+    }
+
+    main {
+      min-width: 0;
+      padding: 40px 52px 54px;
+    }
+
+    .summary {
+      margin-bottom: 36px;
+      padding: 20px 22px;
+      border: 1px solid var(--note-border);
+      border-radius: var(--radius-md);
+      background: var(--note-bg);
+      color: #5b4a30;
+    }
+
+    .summary strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #46351e;
+      font-size: .92rem;
+    }
+
+    section {
+      scroll-margin-top: 24px;
+      padding-bottom: 31px;
+      margin-bottom: 31px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.72rem;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+      font-weight: 600;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #49453f;
+    }
+
+    .plain-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .plain-list li {
+      position: relative;
+      padding-left: 19px;
+      color: #49453f;
+    }
+
+    .plain-list li::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: .76em;
+      width: 6px;
+      height: 6px;
+      border-radius: 2px;
+      background: var(--accent);
+      transform: translateY(-50%);
+    }
+
+    .callout {
+      margin: 18px 0 4px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--paper-2);
+      color: #514b42;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 18px 19px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--paper-2);
+    }
+
+    .contact-card p { margin: 0; }
+    .contact-card a { font-weight: 700; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 4px 0;
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    @media (max-width: 880px) {
+      .hero { padding: 44px 34px 36px; }
+      .hero::after { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      aside { position: static; border-right: 0; border-bottom: 1px solid var(--line); padding: 24px 30px; }
+      nav { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      main { padding: 34px; }
+    }
+
+    @media (max-width: 580px) {
+      .shell { width: min(calc(100% - 18px), 1180px); padding-top: 12px; }
+      .topline { margin-inline: 6px; }
+      .topline > span:last-child { display: none; }
+      .hero { padding: 36px 24px 30px; }
+      .grid aside { padding: 21px 20px; }
+      nav { grid-template-columns: 1fr; }
+      main { padding: 28px 22px 36px; }
+      .contact-card { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 4px; padding-inline: 6px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .shell { width: 100%; padding: 0; }
+      .topline, aside, footer { display: none; }
+      .card { border: 0; box-shadow: none; }
+      .hero { padding: 24px 0; background: #fff; }
+      .grid { display: block; }
+      main { padding: 20px 0; }
+      section { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topline">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span> Caskline Batch Splitter</div>
+      <span>Privacy documentation</span>
+    </div>
+
+    <article class="card">
+      <header class="hero">
+        <div class="eyebrow">Privacy Policy</div>
+        <h1>Clear handling of planning data.</h1>
+        <p class="hero-copy">
+          This Privacy Policy explains how Caskline Batch Splitter handles information while you build batch plans, compare allocation strategies, review calculated schedules, and export results from the extension.
+        </p>
+        <div class="meta">
+          <span class="chip">Effective: August 12, 2026</span>
+          <span class="chip">Chrome extension</span>
+          <span class="chip">Planning &amp; CSV export utility</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <aside aria-label="Policy navigation">
+          <div class="aside-label">Contents</div>
+          <nav>
+            <a href="#overview">Overview</a>
+            <a href="#purpose">Extension purpose</a>
+            <a href="#inputs">Planning inputs</a>
+            <a href="#collection">Information collection</a>
+            <a href="#processing">Local processing</a>
+            <a href="#csv">CSV exports</a>
+            <a href="#permissions">Browser permissions</a>
+            <a href="#sharing">Sharing &amp; advertising</a>
+            <a href="#retention">Retention &amp; control</a>
+            <a href="#security">Security</a>
+            <a href="#children">Children's privacy</a>
+            <a href="#changes">Policy changes</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </aside>
+
+        <main>
+          <div class="summary">
+            <strong>Privacy summary</strong>
+            Caskline Batch Splitter is a calculation and planning tool. Values entered for batch planning are used to produce the requested plan and are not intended to be used for behavioral tracking, advertising profiles, or unrelated browsing analysis.
+          </div>
+
+          <section id="overview">
+            <h2>1. Overview</h2>
+            <p>
+              Caskline Batch Splitter helps users divide a total quantity into practical batches, compare balanced and capacity-based allocation approaches, estimate timing information, and review the resulting schedule directly in the browser. This policy applies to the Caskline Batch Splitter Chrome extension and describes the privacy treatment of information handled through those functions.
+            </p>
+            <p>
+              The extension is designed around data minimization. It needs planning values only to perform the calculation the user requests. Its core purpose does not require building a profile of the user, identifying the user across websites, reading unrelated browsing content, or collecting personal information for secondary commercial use.
+            </p>
+          </section>
+
+          <section id="purpose">
+            <h2>2. Extension purpose</h2>
+            <p>
+              The sole product purpose of Caskline Batch Splitter is to provide an in-browser batch-planning workspace. Users can enter a total amount, target batch size, setup time, maximum batch size, processing rate, and related planning preferences; the extension then calculates an organized schedule so different splitting strategies can be compared quickly.
+            </p>
+            <p>
+              The extension may also present summary values such as batch count, largest and smallest batch, estimated processing time, and a row-by-row schedule. These outputs are derived from the values supplied by the user for the current planning task. They are not intended to represent personal attributes, browsing behavior, or analytics about the user.
+            </p>
+          </section>
+
+          <section id="inputs">
+            <h2>3. Planning inputs and calculated results</h2>
+            <p>
+              Information typed into the extension can include numerical planning values such as total units, target batch size, setup minutes, maximum batch size, processing rate, and optional plan settings such as whether a balanced plan is preferred or whether batch times should be rounded. These values are operational inputs, not account information.
+            </p>
+            <p>
+              Caskline Batch Splitter uses those inputs to calculate batch sizes, timing estimates, totals, and schedule rows. The results exist to help the user evaluate a workload or allocation scenario. The extension does not need names, email addresses, passwords, payment information, precise location, contacts, or the content of unrelated web pages to perform these calculations.
+            </p>
+          </section>
+
+          <section id="collection">
+            <h2>4. Information we collect</h2>
+            <p>
+              Caskline Batch Splitter is not designed as a data-collection service. It does not require a user account or sign-in to perform its core batch calculations, and the planning interface is intended to operate without asking the user to provide personal profile information.
+            </p>
+            <p>
+              The extension does not use the planning values entered into its calculator for targeted advertising, cross-site tracking, sale of user data, or creation of marketing profiles. It also does not need to inspect browsing history, search history, private messages, form entries on unrelated websites, or page content outside the extension in order to generate a batch plan.
+            </p>
+            <div class="callout">
+              A quantity or operational value can still be sensitive in a particular business context. Users should therefore enter only the information necessary for the calculation they want to perform.
+            </div>
+          </section>
+
+          <section id="processing">
+            <h2>5. Local processing</h2>
+            <p>
+              Batch calculations are designed to be performed within the extension environment. When a user changes an input or builds a plan, the extension applies its calculation logic to those values and displays the result in the interface. This local-processing model keeps the tool focused on the immediate planning task rather than on transmitting calculation inputs for remote profiling or analysis.
+            </p>
+            <p>
+              Caskline Batch Splitter does not need a remote account database to determine batch sizes or schedule timing. The extension's planning logic is intended to work from the values available in the active extension session. Any temporary values held by the page while it is open are used to keep the interface responsive and to produce the requested output.
+            </p>
+          </section>
+
+          <section id="csv">
+            <h2>6. CSV export</h2>
+            <p>
+              The extension can generate a CSV representation of the calculated schedule. When the user chooses to download a CSV, the file is created from the plan currently shown in the extension so the user can keep, review, or process the schedule outside the browser.
+            </p>
+            <p>
+              Export is initiated by the user. After a CSV file has been saved to the user's device, that file is under the user's control and is subject to the storage, backup, synchronization, sharing, and security settings of the device or services the user chooses to use. Caskline Batch Splitter does not control how an exported file is handled after the download is completed.
+            </p>
+          </section>
+
+          <section id="permissions">
+            <h2>7. Browser permissions</h2>
+            <p>
+              Caskline Batch Splitter is intended to request only the browser capabilities required for its published functionality. Any permission included in a distributed build must be used to support the extension's batch-planning, interface, preference, or export behavior and not to obtain unrelated access to the user's browsing activity.
+            </p>
+            <p>
+              In particular, the extension's purpose does not require reading the content of arbitrary websites, monitoring the user's browsing history, collecting credentials, or intercepting communications. If a future version requires an additional Chrome permission, that permission will be limited to a feature with a clear product purpose and this policy will be updated when the privacy impact materially changes.
+            </p>
+          </section>
+
+          <section id="sharing">
+            <h2>8. Data sharing, sale, analytics, and advertising</h2>
+            <p>
+              Caskline Batch Splitter does not sell user information. Planning values and calculated schedules are not intended to be supplied to data brokers, advertising networks, or third parties for behavioral advertising, audience segmentation, or cross-context tracking.
+            </p>
+            <p>
+              The extension's core batch-planning functions do not depend on third-party advertising technology. It is not designed to combine extension inputs with data from unrelated websites in order to infer interests, purchasing behavior, identity, or other personal characteristics.
+            </p>
+          </section>
+
+          <section id="retention">
+            <h2>9. Data retention and user control</h2>
+            <p>
+              The extension is intended to retain only information needed to provide its immediate functionality or to preserve settings when a feature explicitly does so. It is not designed to maintain a remote historical archive of every batch plan a user creates. Closing or resetting the extension removes transient session state according to the implementation of the current version.
+            </p>
+            <p>
+              CSV files are retained only wherever the user chooses to save them. Users can delete exported files using the normal file-management tools on their device. If browser-stored preferences are present in a release, users can generally remove that extension-local data by clearing extension data or uninstalling the extension.
+            </p>
+          </section>
+
+          <section id="security">
+            <h2>10. Security and privacy-by-design</h2>
+            <p>
+              Caskline Batch Splitter reduces privacy exposure primarily by limiting the amount and type of information needed for the service. A calculator that can operate from user-entered planning values does not need broad access to personal accounts or unrelated browsing data, so the product is designed to keep those categories outside its normal operating scope.
+            </p>
+            <p>
+              No software environment can be described as absolutely risk-free. Users should keep Chrome and the extension up to date, protect access to their device, and use appropriate care when exporting operational information that may be confidential in their own organization. The extension should not be treated as a secure vault for secrets or credentials.
+            </p>
+          </section>
+
+          <section id="children">
+            <h2>11. Children's privacy</h2>
+            <p>
+              Caskline Batch Splitter is a general-purpose productivity and planning utility and is not directed toward children as an audience. The extension does not intentionally request information such as a child's name, school, contact details, precise location, or other profile information as part of its batch-planning workflow.
+            </p>
+            <p>
+              Because the tool is designed to function without user accounts or personal profiling, its ordinary operation does not depend on knowingly collecting personal information from children. If the extension's functionality changes in a way that materially affects this position, this policy will be revised accordingly.
+            </p>
+          </section>
+
+          <section id="changes">
+            <h2>12. Changes to this policy</h2>
+            <p>
+              This Privacy Policy may be updated when Caskline Batch Splitter changes its functionality, permissions, storage behavior, export workflow, or other practices that affect privacy. Minor wording or formatting changes may also be made to improve clarity without changing the underlying privacy practices.
+            </p>
+            <p>
+              When a material change is made, the effective date shown at the top of this page will be updated. Users are encouraged to review the current policy when installing a new version if that release introduces features that handle information in a different way.
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>13. Contact</h2>
+            <p>
+              Questions about this Privacy Policy, the privacy behavior of Caskline Batch Splitter, or the way a particular feature handles information can be sent to the developer using the address below. When contacting support, users should avoid including passwords or other sensitive information that is not necessary to explain the issue.
+            </p>
+            <div class="contact-card">
+              <p><strong>Privacy contact</strong><br />Caskline Batch Splitter developer</p>
+              <a href="mailto:tieukhai284981@gmail.com">tieukhai284981@gmail.com</a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </article>
+
+    <footer>
+      <span>© 2026 Caskline Batch Splitter</span>
+      <span>Privacy Policy · Effective August 12, 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
